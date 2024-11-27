@@ -6,6 +6,7 @@
             "Test\\": "test/"
         }
     },
+    "description": "utiliser PHPunit sur une collection avec CI CD",
     "license": "MIT",
     "authors": [
         {
