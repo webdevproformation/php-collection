@@ -6,6 +6,7 @@
             "Test\\": "test/"
         }
     },
+    "license": "MIT",
     "authors": [
         {
             "name": "Malik H",
