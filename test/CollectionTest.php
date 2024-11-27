@@ -43,13 +43,13 @@ class CollectionTest extends TestCase
     {
         $c = $this->jeuDonnee2();
         
+        $this->assertInstanceOf( Collection::class , $c->get("Pierre"));
         $this->assertIsArray($c->get("Pierre")->all());
+        $this->assertCount(2 , $c->get("Pierre")->all());
         $this->assertEquals($c->get("Pierre.age"), 24);
         $this->assertEquals($c->get("Zorro.ville"), "Lyon");
 
     }
-
-
 
     public function testMaxSyntaxe1()
     {
@@ -70,6 +70,14 @@ class CollectionTest extends TestCase
         $c = $this->jeuDonnee1();
         $result = $c->extract("age")->join(" ,");
         $this->assertEquals($result , "22 ,26 ,24");
+    }
+
+    public function testListe()
+    {
+        $c = $this->jeuDonnee1();
+        $result = $c->liste("ville", "age")->all();
+        $this->assertIsArray( $result );
+        $this->assertCount( 3 , $result );
     }
 
 }
