@@ -12,6 +12,9 @@
             "email": "malik.h@webdevpro.net"
         }
     ],
+    "scripts": {
+        "test": "vendor/bin/phpunit test/CollectionTest.php"
+    },
     "require": {
         "doctrine/collections": "^2.2"
     },
